@@ -1,0 +1,354 @@
+
+.buttons{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  padding: 20px;
+  border-radius: 12px;  
+  font-size: 18px;
+  font-weight: 300;
+  background: #e2e8f0;
+}
+
+
+.buttons button {
+  padding: 25px;
+  font-size: 20px;
+  border: none;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+
+.buttons button:hover {
+  background: #f1f5f9;
+  transform: scale(1.02);
+}
+
+
+
+
+.calculator{
+  width: 320px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 20px;
+  font-family: 'Courier New', monospace;
+  max-width: 100%; 
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  overflow: hidden;  
+  transition: transform 0.3s;
+}
+
+.screen {
+  background: #1e293b;
+  color: white;
+  font-size: 48px;
+  text-align: right;
+  padding: 30px 20px;
+  min-height: 80px;
+  word-wrap: break-word;
+  word-break: break-all;
+  font-weight: bold;
+}
+
+
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.home-container h1 {
+  font-size: 3rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  margin-bottom: 3rem;
+  text-align: center;
+  z-index: 1;
+}
+
+
+
+.button-container {
+  display: flex;
+  gap: 2rem;
+  z-index: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+
+.button-container a {
+  text-decoration: none;
+}
+
+.button-container button {
+  padding: 1.2rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+
+.calc-btn {
+  background: darkblue;
+  color: white;
+}
+
+
+.calc-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.calc-btn:active {
+  transform: translateY(-2px);
+}
+
+
+.calendar-btn {
+  background: darkorchid;
+  color: white;
+}
+
+
+.calendar-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.calendar-btn:active {
+  transform: translateY(-2px);
+}
+
+
+
+/* Calendar.css */
+
+.calendar-main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+}
+
+
+.calendar-main button:first-child {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.calendar-main button:first-child:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Main heading */
+.calendar-main h1 {
+  font-size: 3rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* Select containers */
+.calendar-main label {
+  display: inline-block;
+  margin: 1rem 0 0.5rem 0;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+
+.calendar-main select:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.calendar-main select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+}
+
+.selectors-container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 1rem 0;
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+
+
+/* Labels */
+.selector-group label {
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  letter-spacing: 0.5px;
+}
+
+/* Dropdown selects - FIXED */
+.selector-group select {
+  background: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #333;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 100%;
+  /* Fix for weird appearance */
+  appearance: auto;
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+}
+
+/* Remove default focus outline and add custom one */
+.selector-group select:focus {
+  outline: none;
+  border-color: #fff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Hover effect */
+.selector-group select:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-color: white;
+}
+
+/* Style the dropdown arrow (optional) */
+.selector-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23667eea' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.2em;
+  padding-right: 2.5rem;
+}
+
+/* Selection cards container */
+.calendar-main h2 {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  margin: 1rem;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+.calendar-main h2:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* Different colors for each display card */
+.calendar-main h2:first-of-type {
+  background: #232F72;
+  color: white;
+  margin-top: 2rem;
+}
+
+.calendar-main h2:nth-of-type(2) {
+  background: #412B6B;
+  color: white;
+}
+
+.calendar-main h2:nth-of-type(3) {
+  background: #211832;
+  color: white;
+}
+
+/* Layout for selects */
+.calendar-main > div {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 1rem 0;
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* If you want to group selects in a div, add this structure */
+.selection-group {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 1rem 0;
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.selection-group label {
+  margin: 0;
+}
+
+
+
