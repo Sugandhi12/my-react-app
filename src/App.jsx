@@ -16,18 +16,19 @@ function App() {
     else {
       return (
         <div className="home-container">
+          <div>
+            <h1>Hello World</h1>
+         </div>
           <h1>Welcome to My Project</h1>
           <div className="d-flex space between button-container">
             <button 
               className="calc-btn" 
-              onClick={() => setCurrentPage('calculator')}
-            >
+              onClick={() => setCurrentPage('calculator')}>
               📱 Calculator
             </button>
             <button 
               className="calendar-btn" 
-              onClick={() => setCurrentPage('calendar')}
-            >
+              onClick={() => setCurrentPage('calendar')} >
               📅 Calendar
             </button>
           </div>

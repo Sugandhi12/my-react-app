@@ -66,6 +66,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
+  background: black;
 }
 
 
@@ -148,207 +149,181 @@
 /* Calendar.css */
 
 .calendar-main {
+  background: black;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem;
   position: relative;
 }
 
-
 .calendar-main button:first-child {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 1rem;
+  background: lightblue ;
+  color: black;
+  border: none;
   padding: 0.7rem 1.5rem;
   font-size: 1rem;
   font-weight: 600;
-  border-radius: 50px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .calendar-main button:first-child:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateX(-5px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-/* Main heading */
-.calendar-main h1 {
-  font-size: 3rem;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-  margin-bottom: 3rem;
-  margin-top: 1rem;
-  text-align: center;
-}
-
-/* Select containers */
-.calendar-main label {
-  display: inline-block;
-  margin: 1rem 0 0.5rem 0;
-  color: white;
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-}
-
-
-.calendar-main select:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-.calendar-main select:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
-}
 
-.selectors-container {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 2rem;
-  margin: 1rem 0;
-  width: 90%;
-  max-width: 800px;
+
+/* Controls container */
+.calendar-main > div:first-of-type {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
   display: flex;
+  gap: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-
-
-/* Labels */
-.selector-group label {
-  color: white;
+.calendar-main label {
   font-weight: 600;
-  font-size: 1rem;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-  letter-spacing: 0.5px;
+  color: #333;
+  margin-right: 0.5rem;
 }
 
-/* Dropdown selects - FIXED */
-.selector-group select {
-  background: white;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  padding: 0.8rem 1rem;
-  font-size: 1rem;
-  border-radius: 12px;
+.calendar-main select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
   cursor: pointer;
+  background: darkblue;
+}
+
+.calendar-main select:hover {
+  border-color: #667eea;
+}
+
+/* Calendar Grid */
+.week-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 8px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.week-header div {
+  background: white;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+  color: #667eea;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  max-width: 800px;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.day-box {
+  background: white;
+  padding: 12px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
   font-weight: 500;
   color: #333;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  width: 100%;
-  /* Fix for weird appearance */
-  appearance: auto;
-  -webkit-appearance: menulist;
-  -moz-appearance: menulist;
 }
 
-/* Remove default focus outline and add custom one */
-.selector-group select:focus {
-  outline: none;
-  border-color: #fff;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-}
-
-/* Hover effect */
-.selector-group select:hover {
+.day-box:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  border-color: white;
+  background: #f0f0f0;
 }
 
-/* Style the dropdown arrow (optional) */
-.selector-group select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23667eea' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 1rem center;
-  background-size: 1.2em;
-  padding-right: 2.5rem;
-}
-
-/* Selection cards container */
-.calendar-main h2 {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 1rem 2rem;
-  border-radius: 15px;
-  margin: 1rem;
-  width: 80%;
-  max-width: 400px;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-  color: #333;
-}
-
-.calendar-main h2:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-}
-
-/* Different colors for each display card */
-.calendar-main h2:first-of-type {
-  background: #232F72;
+.active-day {
+  background: darkblue;
   color: white;
-  margin-top: 2rem;
+  padding: 12px;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* Empty boxes */
+.calendar-grid div:empty {
+  background: rgba(255,255,255,0.3);
+  border-radius: 8px;
+  min-height: 45px;
+}
+
+/* Selection displays */
+.calendar-main h2 {
+  background: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  margin: 0.5rem;
+  font-size: 1.1rem;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: inline-block;
+}
+
+.calendar-main h2:first-of-type {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
 }
 
 .calendar-main h2:nth-of-type(2) {
-  background: #412B6B;
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
   color: white;
 }
 
 .calendar-main h2:nth-of-type(3) {
-  background: #211832;
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46c0 100%);
   color: white;
 }
 
-/* Layout for selects */
-.calendar-main > div {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 2rem;
-  margin: 1rem 0;
-  width: 90%;
-  max-width: 800px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
+/* Responsive design */
+@media (max-width: 768px) {
+  .calendar-main {
+    padding: 1rem;
+  }
+  
+  .calendar-main h1 {
+    font-size: 1.8rem;
+    margin-top: 3rem;
+  }
+  
+  .day-box, .active-day, .week-header div {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+  
+  .calendar-grid {
+    gap: 4px;
+  }
+  
+  .week-header {
+    gap: 4px;
+  }
 }
-
-/* If you want to group selects in a div, add this structure */
-.selection-group {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 2rem;
-  margin: 1rem 0;
-  width: 90%;
-  max-width: 800px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.selection-group label {
-  margin: 0;
-}
-
 
 
